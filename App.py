@@ -22,7 +22,7 @@ st.set_page_config(
     page_title="AI Market Predictor Pro",
     page_icon="📈",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="auto"
 )
 
 # ============================================================
@@ -307,6 +307,133 @@ st.markdown("""
             box-shadow: 0 24px 48px rgba(219, 39, 119, 0.2), 0 0 0 4px rgba(124, 58, 237, 0.1);
         }
     }
+
+    @media (max-width: 900px) {
+        .block-container {
+            padding: 1.5rem 1.25rem 2rem;
+        }
+
+        .main-title {
+            font-size: clamp(30px, 5vw, 40px);
+        }
+
+        [data-testid="stHorizontalBlock"] {
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        [data-testid="stHorizontalBlock"] > [data-testid="column"] {
+            flex: 1 1 calc(50% - 1rem) !important;
+            min-width: min(100%, 160px);
+        }
+
+        .asset-card, .glass-panel, .summary-card, .prediction-box {
+            padding: 18px 16px;
+        }
+
+        .price-value, .predicted-price {
+            font-size: clamp(28px, 4vw, 36px);
+            overflow-wrap: anywhere;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .block-container {
+            padding: 1rem 0.75rem 1.5rem;
+        }
+
+        .main-title {
+            font-size: clamp(26px, 8vw, 34px);
+            line-height: 1.15;
+            letter-spacing: 0;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+
+        .market-strip {
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .market-pill {
+            padding: 8px 12px;
+            font-size: 13px;
+        }
+
+        .section-title {
+            font-size: 21px;
+            margin-top: 22px;
+        }
+
+        .asset-card, .glass-panel, .summary-card, .prediction-box {
+            border-radius: 14px;
+            padding: 16px 14px;
+        }
+
+        .price-title {
+            font-size: 15px;
+        }
+
+        .price-value, .predicted-price {
+            font-size: clamp(24px, 7vw, 32px);
+        }
+
+        .buy, .sell, .hold {
+            font-size: 28px;
+        }
+
+        .summary-value {
+            font-size: 23px;
+            overflow-wrap: anywhere;
+        }
+
+        [data-testid="stTabs"] [role="tablist"] {
+            overflow-x: auto;
+            flex-wrap: nowrap;
+        }
+
+        [data-testid="stTabs"] [role="tab"] {
+            flex: 0 0 auto;
+            white-space: nowrap;
+        }
+
+        [data-testid="stPlotlyChart"], [data-testid="stDataFrame"] {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        [data-testid="stButton"] button,
+        [data-testid="stDownloadButton"] button {
+            min-height: 44px;
+            width: 100%;
+        }
+
+        .asset-card:hover, .summary-card:hover, .prediction-box:hover,
+        div[data-testid="stMetric"]:hover, [data-testid="stPlotlyChart"]:hover {
+            transform: none;
+            animation: none;
+        }
+    }
+
+    @media (max-width: 380px) {
+        [data-testid="stHorizontalBlock"] > [data-testid="column"] {
+            flex-basis: 100% !important;
+        }
+
+        .block-container {
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+        }
+
+        .market-pill {
+            font-size: 12px;
+        }
+    }
+
     @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after {
             animation-duration: 0.01ms !important;
